@@ -1,1 +1,1 @@
-# rock_paper_scissors
+this is  a rock paper scissors game i am coding. It is going to be played entirly in the console, i am making it in order to introduce myself to javascript and learn and apply the basics of it into a project.
