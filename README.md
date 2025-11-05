@@ -1,1 +1,1 @@
-this is  a rock paper scissors game i am coding. It is going to be played entirly in the console, i am making it in order to introduce myself to javascript and learn and apply the basics of it into a project.
+this is a rock paper scissors game i am coding. It is going to be played entirely in the console, i am making it in order to introduce myself to javascript and learn and apply the basics of it into a project.
