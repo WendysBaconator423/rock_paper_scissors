@@ -27,6 +27,12 @@ let humanScore = 0
 let computerScore = 0
 
 
+function playGame(){
+for (let i = 0; i < 5; i++) {
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
 function playRound(humanChoice, computerChoice) {
     if(humanChoice == "paper" && computerChoice == "rock"){
         console.log("YOU WIN!!! paper beats rock")
@@ -68,7 +74,23 @@ function playRound(humanChoice, computerChoice) {
     console.log(humanScore + "/" + computerScore) 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 playRound(humanSelection, computerSelection)
+}
+
+if (humanScore>computerScore) {
+    console.log("YOU WIN THE GAME!!!!! :D")
+}
+else if (humanScore<computerScore) {
+    console.log("YOU LOST THE GAME!!! :(")
+}
+else if (humanScore=computerScore) {
+    console.log("you tied. :/")
+}
+else {
+    console.log("what did you even do??? stop breaking my fucking game")
+}
+console.log(humanScore + "/" + computerScore) 
+}
+
+
+playGame()
