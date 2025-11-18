@@ -28,7 +28,6 @@ let computerScore = 0
 
 
 function playGame(){
-for (let i = 0; i < 5; i++) {
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
@@ -90,7 +89,19 @@ else {
     console.log("what did you even do??? stop breaking my fucking game")
 }
 console.log(humanScore + "/" + computerScore) 
-}
 
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
 
-playGame()
+rock.addEventListener("click", () =>  {
+    alert("am i doing this right?")
+});
+
+paper.addEventListener("click", () =>  {
+    alert("i sure hope i am.")
+});
+
+scissors.addEventListener("click", () =>  {
+    alert("uhhhhmmm i ran outta stuff.")
+});
