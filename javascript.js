@@ -17,20 +17,17 @@ function getComputerChoice() {
 
 
 function getHumanChoice() {
-    let humanChoice = prompt("Rock, Paper, or Scissors?")
- 
-    return humanChoice.toLowerCase();
 }
 
 
 let humanScore = 0
 let computerScore = 0
 
-
-function playGame(){
+const display = document.getElementById('display');
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
+
 
 function playRound(humanChoice, computerChoice) {
     if(humanChoice == "paper" && computerChoice == "rock"){
@@ -73,8 +70,11 @@ function playRound(humanChoice, computerChoice) {
     console.log(humanScore + "/" + computerScore) 
 }
 
-playRound(humanSelection, computerSelection)
-}
+
+
+
+function playGame(){
+
 
 if (humanScore>computerScore) {
     console.log("YOU WIN THE GAME!!!!! :D")
@@ -89,19 +89,29 @@ else {
     console.log("what did you even do??? stop breaking my fucking game")
 }
 console.log(humanScore + "/" + computerScore) 
+}
+
 
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 
-rock.addEventListener("click", () =>  {
-    alert("am i doing this right?")
-});
 
-paper.addEventListener("click", () =>  {
-    alert("i sure hope i am.")
-});
+rock.addEventListener("click", ()=>
+    playRound("rock", getComputerChoice())
+);
 
-scissors.addEventListener("click", () =>  {
-    alert("uhhhhmmm i ran outta stuff.")
-});
+paper.addEventListener("click", ()=>
+    playRound("paper", getComputerChoice())
+);
+
+scissors.addEventListener("click", ()=>
+    playRound("scissors", getComputerChoice())
+);
+
+
+const runningScore = document.createElement("div");
+runningScore.classList.add("runningScore");
+runningScore.textContent = humanScore + "/" + computerScore;
+
+display.appendChild(runningScore);
