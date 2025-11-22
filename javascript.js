@@ -30,65 +30,66 @@ const computerSelection = getComputerChoice();
 
 
 function playRound(humanChoice, computerChoice) {
+    const runningScore = document.createElement("div");
+    runningScore.classList.add("runningScore");
+
+    const roundDisplay = document.createElement("div");
+    roundDisplay.classList.add("runningScore");
+
+    const winningMessage = document.createElement("h3");
+    winningMessage.classList.add("winningMessage");
+
     if(humanChoice == "paper" && computerChoice == "rock"){
-        console.log("YOU WIN!!! paper beats rock")
+        roundDisplay.textContent = "YOU WIN! paper beats rock";
         ++humanScore
     }
     else if (humanChoice == "rock" && computerChoice == "scissors") {
-        console.log("YOU WIN!!! rock beats scissors")
+        roundDisplay.textContent = "YOU WIN! rock beats scissors";
         ++humanScore
     }
     else if (humanChoice == "scissors" && computerChoice == "paper") {
-        console.log("YOU WIN!!! scissors beats paper")
+        roundDisplay.textContent = "YOU WIN! scissors beats paper";
         ++humanScore
     }
     else if (humanChoice == "rock" && computerChoice == "paper"){
-        console.log("YOU LOST. rock loses to paper")
+        roundDisplay.textContent = "YOU LOSE. rock loses to paper";
         ++computerScore
     }
     else if (humanChoice == "paper" && computerChoice == "scissors"){
-        console.log("YOU LOST. paper loses to scissors")
+        roundDisplay.textContent = "YOU LOSE. paper loses to scissors";
         ++computerScore
     }
     else if (humanChoice == "scissors" && computerChoice == "rock"){
-        console.log("YOU LOST. scissors loses to rock")
+        roundDisplay.textContent = "YOU LOSE. scissors loses to rock";
         ++computerScore
     }
     else if (humanChoice == "rock" && computerChoice == "rock"){
-        console.log("YOU TIED. both rock")
+        roundDisplay.textContent = "YOU TIED. both rock";
     }
     else if (humanChoice == "paper" && computerChoice == "paper"){
-        console.log("YOU TIED. both paper")
+        roundDisplay.textContent = "YOU TIED. both paper";
     }
     else if (humanChoice == "scissors" && computerChoice == "scissors"){
-        console.log("YOU TIED. both scissors")
+        roundDisplay.textContent = "YOU TIED. both scissors";
     }
 
     else{
-        console.log("you broke my game???? asshole.")
+        roundDisplay.textContent = "you broke my game? asshole.";
     }
-    console.log(humanScore + "/" + computerScore) 
-}
 
+    runningScore.textContent = humanScore + "/" + computerScore;
+    display.appendChild(runningScore);
+    display.appendChild(roundDisplay);
 
+    if (humanScore >= 5) {
+        winningMessage.textContent = "YOU WON THE GAME!!!!! :D"
+        display.appendChild(winningMessage);
+    }
+    else if (computerScore >= 5) {
+        winningMessage.textContent = "YOU LOST THE GAME!!! :C"
+        display.appendChild(winningMessage);
+    }
 
-
-function playGame(){
-
-
-if (humanScore>computerScore) {
-    console.log("YOU WIN THE GAME!!!!! :D")
-}
-else if (humanScore<computerScore) {
-    console.log("YOU LOST THE GAME!!! :(")
-}
-else if (humanScore=computerScore) {
-    console.log("you tied. :/")
-}
-else {
-    console.log("what did you even do??? stop breaking my fucking game")
-}
-console.log(humanScore + "/" + computerScore) 
 }
 
 
@@ -108,10 +109,3 @@ paper.addEventListener("click", ()=>
 scissors.addEventListener("click", ()=>
     playRound("scissors", getComputerChoice())
 );
-
-
-const runningScore = document.createElement("div");
-runningScore.classList.add("runningScore");
-runningScore.textContent = humanScore + "/" + computerScore;
-
-display.appendChild(runningScore);
